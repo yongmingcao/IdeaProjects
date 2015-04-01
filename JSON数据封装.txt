@@ -1,0 +1,11 @@
+在客户端封装JSON数据
+data={
+	"LoginName":"Tom",
+	"interests":["Game","Music","Sports"]
+	}
+
+
+最外部 是一个对象
+	多个人   最外面是 []  集合
+里面是{}，{}对象
+ JSONObject   JSONArray

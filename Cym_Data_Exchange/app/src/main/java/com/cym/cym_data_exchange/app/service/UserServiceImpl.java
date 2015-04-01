@@ -37,10 +37,45 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(String LoginName, List<String> interests) throws Exception {
-        Thread.sleep(3000);
-        Log.i(TAG,interests.toString());
+//        Thread.sleep(3000);
+//        Log.i(TAG,interests.toString());
         if(LoginName.equals("")){
             throw new ServiceException(RegisterActivity.MSG_REGISTER_FAILED);
+        }
+        HttpClient client=new DefaultHttpClient();
+        String uri="http://localhost:8080/Cym_Client4Android/register.do";
+        HttpPost post=new HttpPost(uri);
+
+        /**
+         * 客户端封装JSON数据
+         */
+
+        JSONObject obj=new JSONObject();
+        obj.put("LoginName",LoginName);
+        JSONArray array=new JSONArray();
+        if(interests!=null){
+            for(String string:interests){
+                array.put(string);
+            }
+        }
+
+        obj.put("interests",array);
+        NameValuePair paramter=new BasicNameValuePair("Data",obj.toString());
+        List<NameValuePair> list=new ArrayList<NameValuePair>();
+        list.add(paramter);
+        post.setEntity(new UrlEncodedFormEntity(list,HTTP.UTF_8));
+        HttpResponse response=client.execute(post);
+
+        int STATUS_CODE=response.getStatusLine().getStatusCode();
+
+        if (STATUS_CODE == HttpStatus.SC_OK) {
+            String result = EntityUtils.toString(response.getEntity());
+            Log.i(TAG, result);
+            if (result.equals("Success!")) {
+
+            } else {
+                throw new ServiceException(RegisterActivity.MSG_REGISTER_FAILED);
+            }
         }
     }
 
