@@ -7,6 +7,17 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Cym_Client4Android" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/commons-beanutils-1.8.3.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/commons-collections-3.2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/commons-lang-2.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/commons-logging-1.1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/json-lib-2.4-jdk15.jar" />
+          <element id="library" level="application" name="Tomcat 8.0.15" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-lib-2.4-jdk15(example)/json_jar_lib/el-api.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/jackson-all-1.7.6.jar" />
+        </element>
       </element>
     </root>
   </artifact>
