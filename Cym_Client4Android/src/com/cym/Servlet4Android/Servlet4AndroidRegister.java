@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import java.io.PrintWriter;
 
 
 /**
@@ -25,7 +25,7 @@ public class Servlet4AndroidRegister extends HttpServlet {
          }
          */
         String data=request.getParameter("Data");
-       // System.out.println(data);
+       //System.out.println(data);
         /**
          * 使用json-lib 解析
          */
@@ -36,9 +36,36 @@ public class Servlet4AndroidRegister extends HttpServlet {
         System.out.println("兴趣爱好有：");
         if(array!=null){
             for (Object o:array){
-                System.out.print(o.toString());
+                System.out.print(o.toString()+"\t");
             }
         }
+        /**
+         * 业务处理
+         */
+        //=======================================
+        /**
+         * 响应
+         */
+        /**
+         * {"result":"success/failed","msg":"。。。。。。"}
+         */
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out=null;
+        try {
+            out=response.getWriter();
+            //JSONBean jsonBean=new JSONBean("success","");
+            JSONBean jsonBean=new JSONBean("failed","服务器处理失败，注册失败！");
+            JSONObject object=JSONObject.fromObject(jsonBean);
+            System.out.println(object.toString());
+
+          // out.print();
+        }
+        finally {
+            if(out!=null){
+                out.close();
+            }
+        }
+
 
     }
 

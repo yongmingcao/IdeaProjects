@@ -34,7 +34,7 @@ public class RegisterActivity extends Activity {
     private  static final String FLAG_REGISTER_FAILED_VALUE_TO_KEY="注册出错！";
     private  static final String FLAG_REGISTER_SUCCESS="注册成功！";
     public static final String MSG_REGISTER_FAILED="登录名不能为空！";
-    public static final String CONNECT_SERVER_FAILED="登陆服务器错误！";
+    public static final String REGISTER_FAILED="登陆服务器错误！";
     public static final String TIMEOUT_CONNECT="连接服务器超时！";
     public static final String TIMEOUT_RESPONSE="服务器响应超时！";
 

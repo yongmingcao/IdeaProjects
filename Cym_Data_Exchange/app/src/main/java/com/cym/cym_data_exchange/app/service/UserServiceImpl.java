@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException(RegisterActivity.MSG_REGISTER_FAILED);
         }
         HttpClient client=new DefaultHttpClient();
-        String uri="http://171.36.199.200:8080/Cym_Client4Android/register.do";
+        String uri="http://171.36.195.17:8080/Cym_Client4Android/register.do";
         HttpPost post=new HttpPost(uri);
 
         /**
@@ -70,13 +70,25 @@ public class UserServiceImpl implements UserService {
         int STATUS_CODE=response.getStatusLine().getStatusCode();
 
         if (STATUS_CODE == HttpStatus.SC_OK) {
-            String result = EntityUtils.toString(response.getEntity());
-           // Log.i(TAG, result);
-//            if (result.equals("Success!")) {
-//
-//            } else {
-//                throw new ServiceException(RegisterActivity.MSG_REGISTER_FAILED);
-//            }
+            String results = EntityUtils.toString(response.getEntity());
+            /**
+             * 解析JSON
+             */
+            JSONObject object=new JSONObject(results);
+            String result=object.getString("result");
+
+            if(result.equals("success")){
+                //注册success
+
+            }
+            else{
+                //注册failed
+                String msg=object.getString("msg");
+                throw  new ServiceException(msg);
+            }
+        }
+        else{
+            throw new ServiceException(RegisterActivity.REGISTER_FAILED);
         }
     }
 
