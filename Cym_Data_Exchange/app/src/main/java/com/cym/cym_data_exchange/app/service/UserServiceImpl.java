@@ -25,6 +25,7 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,7 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException(RegisterActivity.MSG_REGISTER_FAILED);
         }
         HttpClient client=new DefaultHttpClient();
-        String uri="http://171.36.195.17:8080/Cym_Client4Android/register.do";
+        String uri="http://192.168.0.106:8080/Cym_Client4Android/register.do";
         HttpPost post=new HttpPost(uri);
 
         /**
@@ -70,10 +71,12 @@ public class UserServiceImpl implements UserService {
         int STATUS_CODE=response.getStatusLine().getStatusCode();
 
         if (STATUS_CODE == HttpStatus.SC_OK) {
-            String results = EntityUtils.toString(response.getEntity());
+            String results = EntityUtils.toString(response.getEntity(),"utf-8");
+            Log.i("cym",results);
             /**
              * 解析JSON
              */
+
             JSONObject object=new JSONObject(results);
             String result=object.getString("result");
 

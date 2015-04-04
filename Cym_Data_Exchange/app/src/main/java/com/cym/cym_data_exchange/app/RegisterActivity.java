@@ -154,6 +154,8 @@ public class RegisterActivity extends Activity {
                             Message msg = new Message();
                             Bundle bundle = new Bundle();
                             Log.i("Exception","异常");
+                            Log.i("Exception",e.getMessage());
+
                             bundle.putSerializable("ErrorMsg", FLAG_REGISTER_FAILED_VALUE_TO_KEY);
                             msg.setData(bundle);
                             handler.sendMessage(msg);

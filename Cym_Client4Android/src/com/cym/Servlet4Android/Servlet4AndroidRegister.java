@@ -50,21 +50,21 @@ public class Servlet4AndroidRegister extends HttpServlet {
          * {"result":"success/failed","msg":"。。。。。。"}
          */
         response.setCharacterEncoding("UTF-8");
-        PrintWriter out=null;
+       PrintWriter out=null;
         try {
-            out=response.getWriter();
+           out=response.getWriter();
             //JSONBean jsonBean=new JSONBean("success","");
-            JSONBean jsonBean=new JSONBean("failed","服务器处理失败，注册失败！");
+            JSONBean jsonBean=new JSONBean("success","注册成功！");
             JSONObject object=JSONObject.fromObject(jsonBean);
             System.out.println(object.toString());
 
-          // out.print();
+          out.print(object.toString());
         }
-        finally {
-            if(out!=null){
-                out.close();
-            }
-        }
+      finally {
+////            if(out!=null){
+////                out.close();
+////            }
+       }
 
 
     }
