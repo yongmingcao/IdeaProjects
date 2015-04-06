@@ -1,0 +1,11 @@
+HttpClient优化
+1、httpClient的打开和关闭
+2、封装一个HttpClient类
+为了可以持续的使用，避免重复打开、关闭
+web静动态图片加载
+
+HttpURLConnection
+
+理解MIME
+
+
