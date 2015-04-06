@@ -61,9 +61,9 @@ public class Servlet4AndroidRegister extends HttpServlet {
           out.print(object.toString());
         }
       finally {
-////            if(out!=null){
-////                out.close();
-////            }
+          if(out!=null){
+              out.close();
+          }
        }
 
 

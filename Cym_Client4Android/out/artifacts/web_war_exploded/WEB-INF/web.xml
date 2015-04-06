@@ -12,6 +12,10 @@
         <servlet-name>Servlet4AndroidRegister</servlet-name>
         <servlet-class>com.cym.Servlet4Android.Servlet4AndroidRegister</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Servlet4GetStudent</servlet-name>
+        <servlet-class>com.cym.Servlet4Android.Servlet4GetStudent</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>Servlet4AndroidLogin</servlet-name>
@@ -20,6 +24,10 @@
     <servlet-mapping>
         <servlet-name>Servlet4AndroidRegister</servlet-name>
         <url-pattern>/register.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet4GetStudent</servlet-name>
+        <url-pattern>/getStudent.do</url-pattern>
     </servlet-mapping>
 
 </web-app>
