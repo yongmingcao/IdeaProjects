@@ -14,7 +14,8 @@ import java.io.*;
 @WebServlet(name = "Servlet4LoadPictures")
 public class Servlet4LoadPictures extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        System.out.println("post");
+        this.doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

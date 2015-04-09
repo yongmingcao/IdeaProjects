@@ -9,6 +9,10 @@
         <servlet-class>com.cym.Servlet4Android.Servlet4AndroidLogin</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>servlet4UpLoad</servlet-name>
+        <servlet-class>com.cym.Servlet4Android.Servlet4UpLoad</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Servlet4AndroidRegister</servlet-name>
         <servlet-class>com.cym.Servlet4Android.Servlet4AndroidRegister</servlet-class>
     </servlet>
@@ -22,7 +26,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>servlet4LoadPictures</servlet-name>
-        <url-pattern>/getImage.jpeg</url-pattern>
+        <url-pattern>/getImage.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet4UpLoad</servlet-name>
+        <url-pattern>/upload.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Servlet4AndroidLogin</servlet-name>

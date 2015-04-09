@@ -1,5 +1,6 @@
 package com.cym.json2dynamiclistview.app.service;
 
+import android.graphics.Bitmap;
 import com.cym.json2dynamiclistview.app.student.entity.Student;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface UserService {
     public void login(String LoginName, String LoginPsw)throws Exception;
     public void register(String LoginName, List<String> interests) throws Exception;
     public List<Student>getStudents()throws Exception;
+    public Bitmap getImage()throws Exception;
 }
